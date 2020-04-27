@@ -1,0 +1,365 @@
+/* ------ venobox.css --------*/
+.vbox-overlay *, .vbox-overlay *:before, .vbox-overlay *:after{
+    -webkit-backface-visibility: hidden;
+    -webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+body{
+    -webkit-overflow-scrolling:touch;
+}
+/* ------- overlay: change here background color and opacity ----- */
+.vbox-overlay{
+    background: #181818;
+    background: rgba(0,0,0,0.85); 
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}
+.vbox-square {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    border: 50px solid rgba(0,0,0,0.35);
+    border-left: none;
+    border-right: none;
+    z-index: -2;
+}
+.relativo{
+    float: left;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+}
+/* ----- preloader - choose between CIRCLE, IOS, DOTS, QUADS ----- */
+
+/* circle preloader */
+.vbox-preloader{
+    position:fixed; 
+    width:38px; 
+    height:38px;
+    left:50%; 
+    top:50%; 
+    margin-left:-16px; 
+    margin-top:-16px;
+    background-image: url(../img/tail-spin.svg);
+    text-indent: -100px;
+    overflow: hidden;
+    /*-webkit-animation: playload 1.4s steps(18) infinite;
+       -moz-animation: playload 1.4s steps(18) infinite;
+        -ms-animation: playload 1.4s steps(18) infinite;
+         -o-animation: playload 1.4s steps(18) infinite;
+            animation: playload 1.4s steps(18) infinite;*/
+}
+/*@-webkit-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -576px; }
+}
+@-moz-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -576px; }
+}
+@-ms-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -576px; }
+}
+@-o-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -576px; }
+}
+@keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -576px; }
+}*/
+/* IOS preloader */
+/*
+.vbox-preloader{
+    position:fixed; 
+    width:32px; 
+    height:32px;
+    left:50%; 
+    top:50%; 
+    margin-left:-16px; 
+    margin-top:-16px;
+    background-image: url(preload-ios.png);
+    text-indent: -100px;
+    overflow: hidden;
+    -webkit-animation: playload 1.4s steps(12) infinite;
+       -moz-animation: playload 1.4s steps(12) infinite;
+        -ms-animation: playload 1.4s steps(12) infinite;
+         -o-animation: playload 1.4s steps(12) infinite;
+            animation: playload 1.4s steps(12) infinite;
+}
+
+@-webkit-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -384px; }
+}
+@-moz-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -384px; }
+}
+@-ms-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -384px; }
+}
+@-o-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -384px; }
+}
+@keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -384px; }
+}
+*/
+/* dots preloader */
+/*
+.vbox-preloader{
+    position:fixed; 
+    width:32px; 
+    height:11px;
+    left:50%; 
+    top:50%; 
+    margin-left:-16px; 
+    margin-top:-16px;
+    background-image: url(preload-dots.png);
+    text-indent: -100px;
+    overflow: hidden;
+    -webkit-animation: playload 1.4s steps(24) infinite;
+       -moz-animation: playload 1.4s steps(24) infinite;
+        -ms-animation: playload 1.4s steps(24) infinite;
+         -o-animation: playload 1.4s steps(24) infinite;
+            animation: playload 1.4s steps(24) infinite;
+}
+
+@-webkit-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -768px; }
+}
+@-moz-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -768px; }
+}
+@-ms-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -768px; }
+}
+@-o-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -768px; }
+}
+@keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -768px; }
+}
+*/
+/* quads preloader */
+/*
+.vbox-preloader{
+    position:fixed; 
+    width:32px; 
+    height:10px;
+    left:50%; 
+    top:50%; 
+    margin-left:-16px; 
+    margin-top:-16px;
+    background-image: url(preload-quads.png);
+    text-indent: -100px;
+    overflow: hidden;
+    -webkit-animation: playload 1.4s steps(12) infinite;
+       -moz-animation: playload 1.4s steps(12) infinite;
+        -ms-animation: playload 1.4s steps(12) infinite;
+         -o-animation: playload 1.4s steps(12) infinite;
+            animation: playload 1.4s steps(12) infinite;
+}
+@-webkit-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -384px; }
+}
+@-moz-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -384px; }
+}
+@-ms-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -384px; }
+}
+@-o-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -384px; }
+}
+@keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -384px; }
+}
+*/
+/* ----- navigation ----- */
+.vbox-close{
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 50px;
+    min-width: 50px;
+    display: block;
+    z-index: 1;
+    color: #FFF;
+    overflow: hidden;
+    text-align: center;
+    line-height: 38px;
+    font-size: 28px;
+    padding: 6px 10px;
+    /*background: #FFF;*/
+}
+.vbox-next, .vbox-prev{
+    box-sizing: content-box;
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    line-height: 50%;
+    background: rgba(0,0,0,0.35);
+    color: #fff;
+    width: 50px;
+    /*padding-top: 500px;*/
+    z-index: 0;
+    text-align: center;
+    height: 100%;
+    /*margin-top: -85px;*/
+    /*text-indent: -100px;*/
+    /*border: solid transparent;*/ /* Using border instead of padding to keep bg image in place */
+    overflow: hidden;
+}
+.vbox-next i, .vbox-prev i{
+    position: relative;
+    top: 50%;
+    font-size: 1.5em;
+}
+.vbox-prev{
+    left: 0;
+    /*border-width: 0 30px 0 10px;*/
+    /*background: url(../img/prev.gif) center center no-repeat;*/
+}
+.vbox-next{
+    right: 0;
+    /*border-width: 0 10px 0 30px;*/
+    /*background: url(../img/next.gif) center center no-repeat;*/
+}
+
+.vbox-title{
+    width: 100%;
+    height: 50px;
+    font-weight: 600;
+    float: left;
+    text-align: center;
+    line-height: 38px;
+    font-size: 14px;
+    color: #FFF;
+    padding: 6px 40px;
+    overflow: hidden;
+    /*background: #000;*/
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+
+}
+.vbox-num{
+    cursor: inherit;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 50px;
+    min-width: 50px;
+    text-align: center;
+    display: block;
+    color: #FFF;
+    z-index: 1;
+    font-weight: 500;
+    overflow: hidden;
+    line-height: 38px;
+    font-size: 12px;
+    padding: 6px 10px;
+    /*background: #CCC;*/
+    display: none;
+}
+/* ------- inline window ------ */
+.vbox-inline{
+    width: 420px;
+    height: 315px;
+    padding: 10px;
+    background: #fff;
+    text-align: left;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+/* ------- Video & iFrames window ------ */
+.venoframe{
+    border: none;
+    width: 960px;
+    height: 720px;
+}
+@media (max-width: 992px) {
+    .venoframe{
+        width: 640px;
+        height: 480px;
+    }
+}
+@media (max-width: 767px) {
+    .venoframe{
+        width: 420px;
+        height: 315px;
+    }
+}
+@media (max-width: 460px) {
+    .vbox-inline{
+        width: 100%;
+    }
+
+    .venoframe{
+        width: 100%;
+        height: 260px;
+    }
+}
+
+/* ------- PLease do NOT edit this! (or do it at your own risk) ------ */
+.vbox-container{
+    position: relative;
+    background: #000;
+    width: 98%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.vbox-content{
+    text-align: center;
+    float: left;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.vbox-container img{
+    max-width: 100%;
+    height: auto;
+}
+.vwrap{
+    opacity: 1;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+}
